@@ -1,6 +1,6 @@
 package com.svf.bknd.str_producer.controller;
 
-import com.svf.bknd.str_producer.services.StringProducerService;
+import com.svf.bknd.str_producer.services.LoteProducerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,14 +11,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/producer")
-public class StringProducerController {
+public class LoteProducerController {
 
     @Autowired
-    private StringProducerService stringProducerService;
+    private LoteProducerService loteProducerService;
 
-    @PostMapping("/sendMessage")
-    public ResponseEntity<?> sendMessage(@RequestBody String message) {
-        stringProducerService.sendMessage(message);
+    @PostMapping("/sendLoteCabecera")
+    public ResponseEntity<?> sendLoteCabecera(@RequestBody String lote) {
+        loteProducerService.sendLoteCabecera(lote);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 }
+

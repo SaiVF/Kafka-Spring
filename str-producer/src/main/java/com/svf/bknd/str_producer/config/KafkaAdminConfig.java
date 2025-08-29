@@ -22,10 +22,15 @@ public class KafkaAdminConfig {
         config.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaProperties.getBootstrapServers());
         return new KafkaAdmin(config);
     }
+
     @Bean
     public KafkaAdmin.NewTopics topics() {
         return new KafkaAdmin.NewTopics(
-                TopicBuilder.name("str-topic").partitions(2).replicas(1).build()
+                TopicBuilder.name("lote-cabecera-topic")
+                        .partitions(2)      // paralelismo
+                        .replicas(1)
+//                        .replicas(3) caso de que tengamos en cluster de 3 brokers, (3 instancias de kakfa)
+                        .build()
         );
     }
 }

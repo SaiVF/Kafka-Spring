@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.svf.bknd</groupId>
-	<artifactId>str-producer</artifactId>
+	<artifactId>lote-producer</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>str-producer</name>
+	<name>lote-producer</name>
 	<description>Demo project test for Kafka</description>
 	<url/>
 	<licenses>

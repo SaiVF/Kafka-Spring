@@ -7,13 +7,14 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Slf4j
-public class StringProducerService {
+public class LoteProducerService {
 
     @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;
 
-    public void sendMessage(String message) {
-        kafkaTemplate.send("str-topic", message).whenComplete((result, ex) -> {
+
+    public void sendLoteCabecera(String lote) {
+        kafkaTemplate.send("lote-cabecera-topic", lote).whenComplete((result, ex) -> {
             if (ex != null) {
                 log.error("Error al enviar el mensaje {} ", ex.getMessage());
             }
