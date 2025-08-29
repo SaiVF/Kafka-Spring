@@ -18,7 +18,7 @@ public class LoteProducerService {
             if (ex != null) {
                 log.error("Error al enviar el mensaje {} ", ex.getMessage());
             }
-            log.info("Mensaje enviado exitosamente: {}", result.getProducerRecord().value());
+            log.info("Mensaje enviado exitosamente, LoteId: {}", result.getProducerRecord().value());
             log.info("Particion {}, Offset {}", result.getRecordMetadata().partition(), result.getRecordMetadata().offset());
         });
     }
